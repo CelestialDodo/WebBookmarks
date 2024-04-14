@@ -1,0 +1,1 @@
+trex-runner.com: javascript:(function(){    fetch('https://raw.githubusercontent.com/CelestialDodo/WebBookmarks/main/BookmarkCode/DinoGame.js')    .then(response => response.text())    .then(scriptText => {        (new Function(scriptText))();    });})();
