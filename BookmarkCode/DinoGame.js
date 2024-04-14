@@ -1,4 +1,4 @@
-Runner.runMenu = function() {
+window.Runner.runMenu = function() {
     var options;
     var boolOptions;
     var floatOptions;
