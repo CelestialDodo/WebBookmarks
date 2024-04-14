@@ -1,4 +1,4 @@
-function runMenu() {
+Runner.runMenu = function() {
     var options;
     var boolOptions;
     var floatOptions;
@@ -47,4 +47,4 @@ function runMenu() {
     } else {
         alert("Invalid selection or canceled.");
     }
-}
+};
