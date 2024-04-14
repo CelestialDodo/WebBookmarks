@@ -1,4 +1,4 @@
-function() {
+function runMenu() {
     var options;
     var boolOptions;
     var floatOptions;
