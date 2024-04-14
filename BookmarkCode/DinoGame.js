@@ -11,11 +11,25 @@ floatOptions = [1, 2];
 selectedOption = null;
 NewValue = 0;
 
-// Retrieve the original value of gameOver from localStorage
-var gameOverOld = localStorage.getItem('gameOverOld');
-if (!gameOverOld) {
-    localStorage.setItem('gameOverOld', Runner.prototype.gameOver);
+var invisibleElement = document.getElementById('invisibleElement');
+
+// If the element doesn't exist, create and add it
+if (!invisibleElement) {
     gameOverOld = Runner.prototype.gameOver;
+    // Create a new element
+    invisibleElement = document.createElement('div');
+
+    // Set the element's ID
+    invisibleElement.id = 'OD_gameOver';
+
+    // Set the element's content (optional)
+    invisibleElement.textContent = gameOverOld;
+
+    // Apply CSS styles to make the element invisible
+    invisibleElement.style.display = 'none'; // or invisibleElement.style.visibility = 'hidden';
+
+    // Add the element to the document body (or any other parent element)
+    document.body.appendChild(invisibleElement);
 }
     
 // Display options in a prompt-like manner
@@ -41,7 +55,7 @@ if (!isNaN(selectedIndex) && selectedIndex >= 0 && selectedIndex < options.lengt
         if (NewValue == 1) {
             Runner.prototype.gameOver = function () {}
         } else {
-            Runner.prototype.gameOver = gameOverOld;
+            Runner.prototype.gameOver = invisibleElement.textContent;
         }
     }
 } else {
