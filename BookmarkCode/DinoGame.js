@@ -9,11 +9,13 @@ options = ["Invincible", "Speed", "SetScore"];
 boolOptions = [0];
 floatOptions = [1, 2];
 selectedOption = null;
-
 NewValue = 0;
 
-if (typeof gameOverOld === 'undefined') {
-    gameOverOld = Runner.prototype.gameOver; // Assign gameOverOld if it's undefined
+// Retrieve the original value of gameOver from localStorage
+var gameOverOld = localStorage.getItem('gameOverOld');
+if (!gameOverOld) {
+    localStorage.setItem('gameOverOld', Runner.prototype.gameOver);
+    gameOverOld = Runner.prototype.gameOver;
 }
     
 // Display options in a prompt-like manner
