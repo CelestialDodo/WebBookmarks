@@ -1,16 +1,18 @@
 ## These are the bookmarks for each website ##
 
-trex-runner.com: javascript:(function(){    fetch('https://raw.githubusercontent.com/CelestialDodo/WebBookmarks/main/BookmarkCode/DinoGame.js')    .then(response => response.text())    .then(scriptText => {        (new Function(scriptText))();    });})();
+[trex-runner.com Bookmark](javascript:void((function(){    fetch('https://raw.githubusercontent.com/CelestialDodo/WebBookmarks/main/BookmarkCode/DinoGame.js')    .then(response => response.text())    .then(scriptText => {        (new Function(scriptText))();    });})()))
 
-<span onclick="copyTextToClipboard('Text to copy')">Click here to copy</span>
+Click here to copy: <span id="copyText">Text to copy</span>
 
 <script>
-    function copyTextToClipboard(text) {
+    document.getElementById("copyText").onclick = function() {
+        var textToCopy = "Text to copy"; // Replace with the actual text you want to copy
         var textarea = document.createElement("textarea");
-        textarea.value = text;
+        textarea.value = textToCopy;
         document.body.appendChild(textarea);
         textarea.select();
         document.execCommand("copy");
         document.body.removeChild(textarea);
-    }
+        alert("Text copied to clipboard: " + textToCopy);
+    };
 </script>
