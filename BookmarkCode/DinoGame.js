@@ -47,4 +47,3 @@ if (!isNaN(selectedIndex) && selectedIndex >= 0 && selectedIndex < options.lengt
 } else {
     alert("Invalid selection or canceled.");
 }
-// This is to make it update
